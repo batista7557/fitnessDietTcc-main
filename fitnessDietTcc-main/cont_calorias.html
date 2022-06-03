@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cal_style.css" />
+    <link rel="shortcut icon" href="icone.ico" type="image/x-icon">
+    <title>Contador de Calorias</title>
+  </head>
+  <body>
+    <section class="header">
+        <header>
+            <img src="logo.png" alt="" class="logo">
+            <ul class="navigation">
+                <li><a href="home.php">Home</a></li>
+                <li><a href="treino.php">Treino</a></li>
+                <li><a href="imc.html">Taxa metabólica</a></li>
+                <li><a href="cont_calorias.html">Contador de calorias</a></li>
+                <li><a href="about.html">Sobre nós</a></li>
+                <li><a href="logout.php">Sair</a></li>
+            </ul>
+        </header>
+    </section>
+    <div class="container">
+      <h2>Contador de calorias</h2>
+      <h4>Saldo atual</h4>
+      
+      <h1 id="balance" class="balance">0.00</h1>
+
+      <h3>Refeições</h3>
+      
+      <ul id="transactions" class="transactions"></ul>
+
+      <h3>Adicionar refeição</h3>
+      
+      <form id="form">
+        <div class="form-control">
+          <label for="text">Nome</label>
+          <input autofocus type="text" id="text" placeholder="Nome do alimento" />
+        </div>
+
+        <div class="form-control">
+          <label for="amount">Valor <br/>
+          </label>
+          <small>(kcal)</small>
+          <input type="number" id="amount" placeholder="Quantidade de calorias" />
+        </div>
+
+        <button class="btn">Adicionar</button>
+        <button class="btn" onclick="addData()">Salvar</button>
+      </form>
+    </div>
+    <div class="container2">
+      <canvas id="chart"></canvas>
+  </div>
+  <script src="./node_modules/chart.js/dist/chart.js"></script>
+  <script>
+    var ctx = document.getElementById('chart').getContext('2d');
+
+var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'line',
+// The data for our dataset
+data: {
+    labels: ["30/05", "31/05", "01/06", "02/06", "03/06"],
+    datasets: [{
+        label: "Calorias diárias",
+        backgroundColor: [
+            'green'
+        ],
+        borderColor: ['green'],
+        data: [1600, 1900, 1400, 2100]
+    },
+    {
+        label: "Qtd. adequada para perder peso",
+        backgroundColor: [
+            'blue'
+        ],
+        borderColor: ['blue'],
+        data: [1512, 1512, 1512, 1512],
+        type: 'line'
+    },
+    {
+        label: "Qtd. adequada para manter peso",
+        backgroundColor: [
+            'red'
+        ],
+        borderColor: ['red'],
+        data: [1962, 1962, 1962, 1962],
+        type: 'line'
+    },
+    {
+        label: "Qtd. adequada para aumentar peso",
+        backgroundColor: [
+            'gray'
+        ],
+        borderColor: ['gray'],
+        data: [2412, 2412, 2412, 2412],
+        type: 'line'
+    }
+]
+},
+// Configuration options go here
+options: {
+    animation: {
+        duration: 1500
+    }
+},
+layout: {
+    padding: {
+        left: 150,
+        right: 150
+    }
+}
+});
+var container2 = document.querySelector(".container2")
+
+var addData = () => {
+container2.style.display = "flex"
+
+let calorias = {};
+
+fetch(`contCal.php?requisicao=calChart`)
+    .then((response) => {
+        return response.json()
+    })
+    .then(function(data){
+        // let json=JSON.parse(data)
+        calorias = data.data
+    })
+
+var sizeData = chart.data.datasets[0].data.length
+chart.data.datasets[0].data[sizeData] = 2300
+//chart.data.labels[sizeData] = `New Data ${sizeData + 1}`
+chart.update()
+
+var sizeData2 = chart.data.datasets[1].data.length
+chart.data.datasets[1].data[sizeData2] = 1512
+chart.update()
+
+var sizeData3 = chart.data.datasets[2].data.length
+chart.data.datasets[2].data[sizeData3] = 1962
+chart.update()
+
+var sizeData4 = chart.data.datasets[3].data.length
+chart.data.datasets[3].data[sizeData4] = 2412
+chart.update()
+}
+</script>
+    <footer>
+        <div class="footer-content">
+            <p>
+                Copyright &copy; 2022, FITNESS&DIET - Todos os direitos reservados
+            </p>
+            <div class="social-list">
+                <ul>
+                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="script_cal.js"></script>
+  </body>
+</html>

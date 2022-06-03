@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 85.3%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    width: 190px;
+}
+
+header .navigation{
+    position: relative;
+    display: flex;
+}
+
+header .navigation a{
+    display: inline-block;
+    color: #fff;
+    margin-right: 40px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
+}
+
+header .navigation li a:hover{
+    color: #03a9f4;
+    transition: all .8s;
+}
+
+.conteudo{
+    padding: 90px;
+    max-width: 600px;
+}
+
+.conteudo .conteudoBx h2{
+    font-size: 3.5em;
+    color: #fff;
+    line-height: 1em;
+}
+
+.conteudo .conteudoBx p{
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+    margin: 20px 0;
+}
+
+.conteudo .conteudoBx a{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #03a9f4;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 30px;
+}
+
+.conteudo .conteudoBx a:hover{
+    background: #016a9b;
+    transition: all .5s;
+}
+
+.conteudo .conteudoBx .btnSaibaMais{
+    margin-top: 30px;
+}

@@ -1,0 +1,182 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@200;300;400&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0);
+}
+
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    animation: zoom 25s;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner{
+    position: absolute;
+    top: 32%;
+    left: 8%;
+}
+
+.banner h1{
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 4rem;
+    text-shadow: .2rem .3rem .5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: moveBanner 1s 0.4s forwards;
+}
+
+.banner p{
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 2.8rem;
+    text-shadow: .2rem .3rem .5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: moveBanner 1s 0.6s forwards;
+}
+
+@keyframes moveBanner{
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+form{
+    background-color: white;
+    max-width: 500px;
+    width: 70%;
+    padding: 20px;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    transform: translate(-1.5%,-50%);
+    border-radius: 10px;
+    padding-right: 29px;
+    box-shadow: .2rem .2rem .8rem rgb(61, 61, 61);
+}
+
+form h3{
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1abc9b;
+    padding-top: 8px;
+    padding-bottom: 15px;
+}
+
+form p{
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 18px;
+}
+
+form input[type=email],
+form input[type=password],
+form input[type=text]{
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+form input[type=submit]{
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    width: 190px;
+    height: 38px;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    background: #43cea2;  
+    background: -webkit-linear-gradient(to right, #185a9d, #43cea2);  
+    background: linear-gradient(to right, #185a9d, #43cea2); 
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+form input[type=submit]:hover{
+    background: #185a9d;
+}
+
+form input[type=email]:focus{
+    outline: 0;
+}
+
+form input[type=password]:focus{
+    outline: 0;
+}
+
+form input[type=text]:focus{
+    outline: 0;
+}
+
+form .social p{
+    margin-top: 10px;
+    text-align: center;
+}
+
+form .social a{
+	color: #185a9d;
+	font-size: 2.5rem;
+}
+
+form .social .cadastro a{
+	color: #185a9d;
+    font-size: 18px;
+}
+
+form .social .cadastro a:hover{
+	color: #43cea2;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.social a:hover{
+	color: #1abc9b;
+	transition: all 1s;
+}
+
+form .social ul{
+    margin-top: 30px;
+    padding-bottom: 15px;
+	display: flex;
+	justify-content: space-evenly;
+	list-style-type: none;
+}
