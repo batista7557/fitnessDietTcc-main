@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
 
 *{
     margin: 0;
@@ -90,4 +94,181 @@ header .navigation li a:hover{
 
 .conteudo .conteudoBx .btnSaibaMais{
     margin-top: 30px;
+}
+
+.about_view{
+    background: url(black.png);
+    color: white;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+.main{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.main h2{
+    font-size: 3vw;
+    position: relative;
+    text-align: center;
+    padding-top: 100px;
+    display: inline-block;
+}
+
+span{
+    color: #03a9f4;
+}
+
+.main h6{
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+.main h2:before{
+    position: absolute;
+    content: '';
+    background: #016a9b;
+    height: 3px;
+    width: 30%;
+    right: -15px;
+    bottom: 0;
+    border-radius: 50px;
+}
+
+.content{
+    margin: 0px 80px;
+    font-weight: 500;
+}
+
+.img{
+    border-radius: 15px;
+    height: 600px;
+}
+
+.img2{
+    border-radius: 15px;
+    height: 600px;
+    width: 530px;
+}
+
+.img3{
+    border-radius: 15px;
+}
+
+.mais{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #03a9f4;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 30px;
+}
+
+.mais:hover{
+    background: #016a9b;
+    transition: all .5s;
+}
+
+footer{
+    width: 100%;
+    height: 7rem;
+    background-color: rgb(12, 12, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content p{
+    color: #a7a7a7;
+    font-size: 1rem;
+}
+
+.social-list a{
+    margin: 0 2rem;
+    color: #a7a7a7;
+    font-size: 1.3rem;
+}
+
+.social-list a:hover{
+    color: #03a9f4;
+    transition: all .5s;
+}
+.social-list ul{
+   display: flex;
+}
+
+@media (max-width: 991px)
+{
+    header
+    {
+        padding: 15px 40px;
+    }
+    section
+    {
+        background: url(bg2.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .conteudo .conteudoBx h2
+    {
+        font-size: 2.5em;
+    }
+    header .navigation
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        z-index: 10;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    header .navigation.active
+    {
+        display: flex;
+    }
+
+    header .navigation li a
+    {
+        font-size: 24px;
+        margin: 10x 0;
+    }
+
+    .toggleMenu
+    {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url(menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 11;
+    }
+
+    .toggleMenu.active
+    {
+        background: url(close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 11;
+    }
 }

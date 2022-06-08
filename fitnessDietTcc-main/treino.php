@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="treino.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/15dcada156.js" crossorigin="anonymous"></script>
-    <title>Sobre nós</title>
+    <link rel="shortcut icon" href="icone.ico" type="image/x-icon">
+    <title>Personal</title>
     <style>
 
         

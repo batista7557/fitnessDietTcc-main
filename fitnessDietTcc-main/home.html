@@ -18,6 +18,7 @@ include('protect.php');
     <section id="home">
         <header>
             <img src="logo.png" alt="" class="logo">
+            <div class="toggleMenu" onclick="toggleMenu()"></div>
             <ul class="navigation">
                 <li><a href="home.php">Home</a></li>
                 <li><a href="imc.html">Taxa metabólica</a></li>
@@ -34,5 +35,13 @@ include('protect.php');
             </div>
         </div>
     </section>
+    <script type="text/javascript">
+        function toggleMenu(){
+            const toggleMenu = document.querySelector('.toggleMenu')
+            const navigation = document.querySelector('.navigation')
+            toggleMenu.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
 </body>
 </html>
